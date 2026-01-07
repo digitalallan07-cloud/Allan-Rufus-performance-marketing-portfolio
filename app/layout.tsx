@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-// NOTE: Google Fonts import - uncomment when deploying or running with internet access
-// import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navigation } from "@/components/navigation";
 
-// NOTE: Uncomment these when deploying or running with internet access
-// const inter = Inter({
-//   subsets: ["latin"],
-//   variable: "--font-inter",
-//   display: "swap",
-// });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
-// const plusJakarta = Plus_Jakarta_Sans({
-//   subsets: ["latin"],
-//   variable: "--font-plus-jakarta",
-//   display: "swap",
-// });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-plus-jakarta",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Allan Rufus - Performance Marketing Specialist",
@@ -49,10 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className="font-sans antialiased"
-        style={{
-          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
-        }}
+        className={`${inter.variable} ${plusJakarta.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
