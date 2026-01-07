@@ -85,14 +85,23 @@ export function HeroSection() {
             </motion.div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold tracking-tight">
-              <span className="block text-foreground">Allan Rufus</span>
+              <span className="block text-muted-foreground text-3xl sm:text-4xl mb-2">
+                I'm{" "}
+                <span className="inline-block px-3 py-1 bg-gradient-to-r from-orange-500 to-amber-500 text-white rounded-lg">
+                  Allan Rufus
+                </span>
+                ,
+              </span>
               <span className="block mt-2 gradient-text">
-                Performance Marketing Specialist
+                A Brand & Marketing Specialist
               </span>
             </h1>
 
             <p className="max-w-3xl mx-auto text-xl sm:text-2xl text-muted-foreground font-light">
-              4+ years driving measurable growth through data-driven campaigns
+              Specializing in Performance Marketing, Brand Strategy & Digital Growth
+            </p>
+            <p className="max-w-2xl mx-auto text-lg text-muted-foreground/80 mt-4">
+              4+ years driving measurable results through data-driven campaigns
             </p>
           </motion.div>
 

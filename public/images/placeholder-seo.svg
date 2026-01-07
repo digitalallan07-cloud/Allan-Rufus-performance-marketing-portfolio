@@ -1,0 +1,24 @@
+<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#0891b2;stop-opacity:0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grad6)"/>
+  <text x="400" y="260" font-family="Arial, sans-serif" font-size="36" fill="#ffffff" text-anchor="middle" font-weight="bold">SEO Performance</text>
+  <text x="400" y="310" font-family="Arial, sans-serif" font-size="20" fill="#e0e0e0" text-anchor="middle">Organic Growth Results</text>
+
+  <!-- Progress Bars Visual -->
+  <rect x="150" y="360" width="500" height="30" fill="rgba(255,255,255,0.15)" rx="15"/>
+  <rect x="150" y="360" width="400" height="30" fill="rgba(255,255,255,0.4)" rx="15"/>
+  <text x="400" y="382" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Keywords: 2,400</text>
+
+  <rect x="150" y="410" width="500" height="30" fill="rgba(255,255,255,0.15)" rx="15"/>
+  <rect x="150" y="410" width="450" height="30" fill="rgba(255,255,255,0.4)" rx="15"/>
+  <text x="400" y="432" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">Traffic: +285%</text>
+
+  <rect x="150" y="460" width="500" height="30" fill="rgba(255,255,255,0.15)" rx="15"/>
+  <rect x="150" y="460" width="350" height="30" fill="rgba(255,255,255,0.4)" rx="15"/>
+  <text x="400" y="482" font-family="Arial, sans-serif" font-size="14" fill="#ffffff" text-anchor="middle" font-weight="bold">DA: 72</text>
+</svg>
