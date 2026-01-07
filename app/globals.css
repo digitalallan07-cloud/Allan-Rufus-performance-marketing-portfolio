@@ -6,44 +6,24 @@
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --border: 240 5.9% 90%;
+    --electric-blue: 211 100% 48%;
+    --electric-blue-dark: 211 100% 35%;
+    --electric-blue-light: 211 100% 65%;
   }
 
   .dark {
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
-    --card: 240 10% 7%;
-    --card-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --border: 240 3.7% 15.9%;
   }
 }
 
 @layer base {
   * {
-    border-color: hsl(var(--border));
+    @apply border-border;
   }
 
   body {
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
@@ -57,53 +37,81 @@
     text-wrap: balance;
   }
 
-  .glassmorphism {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .text-electric-blue {
+    color: rgb(0, 112, 243);
   }
 
-  .dark .glassmorphism {
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+  .text-electric-blue-dark {
+    color: rgb(0, 88, 191);
   }
 
-  .gradient-text {
-    background: linear-gradient(to right, rgb(96, 165, 250), rgb(192, 132, 252), rgb(244, 114, 182));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+  .bg-electric-blue {
+    background-color: rgb(0, 112, 243);
   }
 
-  .gradient-border {
-    position: relative;
-    background: linear-gradient(
-      to right,
-      rgba(59, 130, 246, 0.5),
-      rgba(168, 85, 247, 0.5),
-      rgba(236, 72, 153, 0.5)
-    );
-    padding: 1px;
-    border-radius: 0.75rem;
+  .border-electric-blue {
+    border-color: rgb(0, 112, 243);
   }
 
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 0.75rem;
-    padding: 1px;
-    background: linear-gradient(
-      to right,
-      rgba(59, 130, 246, 0.5),
-      rgba(168, 85, 247, 0.5),
-      rgba(236, 72, 153, 0.5)
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
+  .shadow-electric-blue\/20 {
+    --tw-shadow-color: rgba(0, 112, 243, 0.2);
+    --tw-shadow: var(--tw-shadow-colored);
+  }
+
+  .shadow-electric-blue\/30 {
+    --tw-shadow-color: rgba(0, 112, 243, 0.3);
+    --tw-shadow: var(--tw-shadow-colored);
+  }
+
+  .shadow-electric-blue\/40 {
+    --tw-shadow-color: rgba(0, 112, 243, 0.4);
+    --tw-shadow: var(--tw-shadow-colored);
+  }
+
+  /* Custom Animations */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(1.05);
+    }
+  }
+
+  @keyframes bounce-slow {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes scroll-down {
+    0% {
+      transform: translateY(0);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(12px);
+      opacity: 0;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s ease-in-out infinite;
+  }
+
+  .animate-bounce-slow {
+    animation: bounce-slow 2s ease-in-out infinite;
+  }
+
+  .animate-scroll-down {
+    animation: scroll-down 1.5s ease-in-out infinite;
   }
 }
