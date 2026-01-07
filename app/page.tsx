@@ -1,9 +1,9 @@
-import { AppleHero } from "@/components/apple-hero";
+import { Hero } from "@/components/hero";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
-      <AppleHero />
+    <main>
+      <Hero />
     </main>
   );
 }

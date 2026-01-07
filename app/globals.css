@@ -3,103 +3,91 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --electric-blue: 211 100% 48%;
-    --electric-blue-dark: 211 100% 35%;
-    --electric-blue-light: 211 100% 65%;
-  }
-
-  body {
-    background-color: white;
-    color: rgb(24, 24, 27);
-    font-feature-settings: "rlig" 1, "calt" 1;
+  * {
+    box-sizing: border-box;
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    color: rgb(17, 24, 39);
   }
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-
-  .text-electric-blue {
-    color: rgb(0, 112, 243);
-  }
-
-  .text-electric-blue-dark {
-    color: rgb(0, 88, 191);
-  }
-
-  .bg-electric-blue {
-    background-color: rgb(0, 112, 243);
-  }
-
-  .border-electric-blue {
-    border-color: rgb(0, 112, 243);
-  }
-
-  .shadow-electric-blue\/20 {
-    --tw-shadow-color: rgba(0, 112, 243, 0.2);
-    --tw-shadow: var(--tw-shadow-colored);
-  }
-
-  .shadow-electric-blue\/30 {
-    --tw-shadow-color: rgba(0, 112, 243, 0.3);
-    --tw-shadow: var(--tw-shadow-colored);
-  }
-
-  .shadow-electric-blue\/40 {
-    --tw-shadow-color: rgba(0, 112, 243, 0.4);
-    --tw-shadow: var(--tw-shadow-colored);
-  }
-
-  /* Custom Animations */
-  @keyframes pulse-slow {
-    0%, 100% {
-      opacity: 0.3;
-      transform: scale(1);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.05);
-    }
-  }
-
+  /* Animation: Slow Bounce */
   @keyframes bounce-slow {
     0%, 100% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-12px);
     }
   }
 
-  @keyframes scroll-down {
+  .animate-bounce-slow {
+    animation: bounce-slow 2.5s ease-in-out infinite;
+  }
+
+  /* Animation: Scroll Indicator */
+  @keyframes scroll {
     0% {
       transform: translateY(0);
       opacity: 0;
     }
-    50% {
+    30% {
+      opacity: 1;
+    }
+    60% {
       opacity: 1;
     }
     100% {
-      transform: translateY(12px);
+      transform: translateY(16px);
       opacity: 0;
     }
   }
 
-  .animate-pulse-slow {
-    animation: pulse-slow 3s ease-in-out infinite;
+  .animate-scroll {
+    animation: scroll 2s ease-in-out infinite;
   }
 
-  .animate-bounce-slow {
-    animation: bounce-slow 2s ease-in-out infinite;
+  /* Animation: Slow Ping */
+  @keyframes ping-slow {
+    0% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
   }
 
-  .animate-scroll-down {
-    animation: scroll-down 1.5s ease-in-out infinite;
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Text Gradient Utilities */
+  .text-gradient {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
