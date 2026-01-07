@@ -19,9 +19,9 @@ import { Navigation } from "@/components/navigation";
 // });
 
 export const metadata: Metadata = {
-  title: "Allan Rufus - Performance Marketing Specialist",
+  title: "Allan Rufus - Performance Marketing Expert",
   description:
-    "Performance Marketing Specialist with 4+ years driving measurable growth through data-driven campaigns. Expert in Google Ads, Meta Ads, LinkedIn Ads, and CRM automation.",
+    "Performance Marketing Expert with 4+ years UAE experience. Empowering brands with full-funnel marketing to accelerate growth.",
   keywords: [
     "Performance Marketing",
     "Digital Marketing",
