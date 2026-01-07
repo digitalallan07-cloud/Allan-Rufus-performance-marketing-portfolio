@@ -4,26 +4,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
     --electric-blue: 211 100% 48%;
     --electric-blue-dark: 211 100% 35%;
     --electric-blue-light: 211 100% 65%;
   }
 
-  .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-
   body {
-    @apply bg-background text-foreground;
+    background-color: white;
+    color: rgb(24, 24, 27);
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 
